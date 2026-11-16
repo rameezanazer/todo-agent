@@ -1,0 +1,132 @@
+import type { Task } from "@/lib/db";
+
+// Sample tasks used only to preview the dashboard design.
+// They are replaced by real tasks from the database in the next step.
+
+const base = {
+  question: null,
+  answer: null,
+  result: null,
+  review_notes: null,
+  saved_minutes: 0,
+  created_at: "",
+  completed_at: null,
+} satisfies Partial<Task>;
+
+export const sampleTasks: Task[] = [
+  {
+    ...base,
+    id: 1,
+    title: "Research the 3 best noise-cancelling headphones under $200",
+    category: "agent",
+    reason: "Web research I can do on my own.",
+    estimate_minutes: 45,
+    status: "done",
+    saved_minutes: 45,
+  },
+  {
+    ...base,
+    id: 2,
+    title: "Summarize this week's AI news into 5 bullet points",
+    category: "agent",
+    reason: "Reading and summarizing public articles.",
+    estimate_minutes: 30,
+    status: "running",
+  },
+  {
+    ...base,
+    id: 3,
+    title: "Compare flight prices to Lisbon for March",
+    category: "agent",
+    reason: "Price comparison across public sites.",
+    estimate_minutes: 25,
+    status: "review",
+  },
+  {
+    ...base,
+    id: 4,
+    title: "Write a packing checklist for the trip",
+    category: "agent",
+    reason: "A simple writing task.",
+    estimate_minutes: 10,
+    status: "todo",
+  },
+  {
+    ...base,
+    id: 5,
+    title: "Draft a polite reply to the landlord about the lease renewal",
+    category: "agent",
+    reason: "I can draft it; you send it.",
+    estimate_minutes: 15,
+    status: "todo",
+  },
+  {
+    ...base,
+    id: 6,
+    title: "Fill in an invoice template for the March project",
+    category: "agent",
+    reason: "Document work in a sandbox folder.",
+    estimate_minutes: 20,
+    status: "attention",
+    review_notes: "The invoice is missing your business address.",
+  },
+  {
+    ...base,
+    id: 7,
+    title: "Plan mum's birthday dinner",
+    category: "together",
+    reason: "I can plan it once I know your preferences.",
+    estimate_minutes: 45,
+    status: "question",
+    question: "What's your budget, and how many guests are coming?",
+  },
+  {
+    ...base,
+    id: 8,
+    title: "Rewrite my CV summary",
+    category: "together",
+    reason: "Needs your input on tone and focus.",
+    estimate_minutes: 30,
+    status: "todo",
+  },
+  {
+    ...base,
+    id: 9,
+    title: "Choose a new phone plan",
+    category: "together",
+    reason: "I compared plans; you made the final pick.",
+    estimate_minutes: 40,
+    status: "done",
+    saved_minutes: 20,
+  },
+  {
+    ...base,
+    id: 10,
+    title: "Call the dentist to book a check-up",
+    category: "you",
+    reason: "Needs a phone call from you.",
+    estimate_minutes: 10,
+    status: "todo",
+  },
+  {
+    ...base,
+    id: 11,
+    title: "Go for a 30-minute run",
+    category: "you",
+    reason: "Only you can do this one.",
+    estimate_minutes: 30,
+    status: "todo",
+  },
+  {
+    ...base,
+    id: 12,
+    title: "Sign the lease at the office",
+    category: "you",
+    reason: "Requires you in person.",
+    estimate_minutes: 20,
+    status: "done",
+  },
+];
+
+// Minutes saved on each of the previous six days, oldest first.
+export const sampleWeek = [35, 80, 20, 55, 0, 95];
